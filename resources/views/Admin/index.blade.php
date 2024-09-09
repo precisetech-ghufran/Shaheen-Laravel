@@ -330,6 +330,31 @@ $(document).ready(function() {
     });
 </script>
 
-
+<script type="text/javascript">
+    $(document).ready(function() {
+        // When state is changed
+        $('#state_id').on('change', function() {
+            var stateId = $(this).val();
+            if(stateId) {
+                // Make AJAX request to get cities based on selected state
+                $.ajax({
+                    url: '/get-cities/' + stateId,
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function(data) {
+                        $('#city_id').empty();  // Clear existing options
+                        $('#city_id').append('<option value="">Select City</option>');  // Add placeholder
+                        $.each(data, function(key, value) {
+                            $('#city_id').append('<option value="' + value.id + '">' + value.name + '</option>');
+                        });
+                    }
+                });
+            } else {
+                $('#city_id').empty();  // If no state selected, empty the city dropdown
+                $('#city_id').append('<option value="">Select City</option>');
+            }
+        });
+    });
+</script>
   </body>
 </html>

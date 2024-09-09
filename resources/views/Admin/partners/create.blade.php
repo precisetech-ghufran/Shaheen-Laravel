@@ -83,14 +83,14 @@
                     @endforeach
                 </select>
                 @error('country_id')
-                    <div class="invalid-feedback">{{ $message }}</div>
+                    <div class="invalid-feedback">{{ $message }}</div> 
                 @enderror
             </div>
 
             <!-- State Dropdown -->
             <div class="col-lg-6 col-sm-3 mb-3">
-                <label for="state_id">State<span class="text-danger">*</span></label>
-                <select name="state_id" id="state_id" class="form-control select2 @error('state_id') is-invalid @enderror"   >
+                <label for="stateid">State<span class="text-danger">*</span></label>
+                <select name="stateid" id="stateid" class="form-control select2 @error('stateid') is-invalid @enderror"   >
                     <option value="">Select State</option>
                     @foreach($states as $state)
                         <option value="{{ $state->id }}" {{ old('state_id') == $state->id ? 'selected' : '' }}>
@@ -98,19 +98,19 @@
                         </option>
                     @endforeach
                 </select>
-                @error('state_id')
+                @error('stateid')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>
 
          
             <div class="col-lg-6 col-sm-3 mb-3">
-                <label for="city_id">City<span class="text-danger">*</span></label>
-                <select name="city_id" id="city_id" class="form-control select2 @error('city_id') is-invalid @enderror"   >
+                <label for="cityid">City<span class="text-danger">*</span></label>
+                <select name="cityid" id="cityid" class="form-control select2 @error('cityid') is-invalid @enderror"   >
                     <option value="">Select City</option>
                     <!-- Cities will be loaded via AJAX based on state selection -->
                 </select>
-                @error('city_id')
+                @error('cityid')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>

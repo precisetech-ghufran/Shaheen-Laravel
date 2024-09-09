@@ -63,11 +63,11 @@ Partner Name</span></th>
                                      {{$index+1}}
                                       </div>
                                     </td>
-          <!--    <td> 
+             <td> 
                                       <div class="product-names">
                                         <a class="f-light"  href="{{route('partners.edit',$partner->id)}}">{{$partner->partner_name}}</a>
                                       </div>
-                                    <
+                                    
 
 
  <div class="product-names">
@@ -75,7 +75,7 @@ Partner Name</span></th>
     <img src="{{ asset('images/partners/' . $partner->image) }}" alt="Partner Image" width="150">
 @endif
                                       </div>
-                                    </td> -->
+                                    </td> 
 
 
                                      <td> 

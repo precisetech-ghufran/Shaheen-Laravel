@@ -81,17 +81,17 @@
                  <label for="stateid">State<span class="text-danger">*</span></label>
             <select name="stateid" id="stateid" class="form-control select2 @error('stateid') is-invalid @enderror">
                 <option value="">Select State</option>
-                @foreach ($states as $state)
-                    <option value="{{ $state->id }}" {{ old('stateid') == $state->id ? 'selected' : '' }}>
-                        {{ $state->name }}
-                    </option>
-                @endforeach
+        @foreach($states as $state)
+                <option value="{{ $state->id }}" {{ $vendor->state_id == $state->id ? 'selected' : '' }}>
+                    {{ $state->name }}
+                </option>
+            @endforeach
             </select>
             @error('stateid')
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror
             </div>
-        </div>
+        </div> 
 <br/>
         <div class="row">
             <!-- City -->
@@ -99,7 +99,11 @@
               <label for="cityid">City<span class="text-danger">*</span></label>
             <select name="cityid" id="cityid" class="form-control select2 @error('cityid') is-invalid @enderror">
                 <option value="">Select City</option>
-                <!-- Cities will be loaded dynamically -->
+               @foreach($cities as $city)
+                <option value="{{ $city->id }}" {{ $vendor->city_id == $city->id ? 'selected' : '' }}>
+                    {{ $city->name }}
+                </option>
+            @endforeach
             </select>
             @error('cityid')
                 <div class="invalid-feedback">{{ $message }}</div>
@@ -113,7 +117,7 @@
                     type="text" 
                     name="vendor_zip_code" 
                     class="form-control @error('vendor_zip_code') is-invalid @enderror" 
-                    placeholder="Enter vendor zip code" 
+                     placeholder="Enter vendor zip code" 
                     value="{{ $vendor->vendor_zip_code }}">
                 @error('vendor_zip_code')
                     <span class="invalid-feedback" role="alert">
@@ -149,7 +153,7 @@
                       >
                     <option value="">Select Vendor Group</option>
                     @foreach($vendorGroups as $group)
-                        <option value="{{ $group->id }}" {{ old('vendor_group_id') == $group->id ? 'selected' : '' }}>
+                        <option value="{{ $group->id }}" {{ $vendor->vendor_group_id  == $group->id ? 'selected' : '' }}>
                             {{ $group->vendor_group }}
                         </option>
                     @endforeach

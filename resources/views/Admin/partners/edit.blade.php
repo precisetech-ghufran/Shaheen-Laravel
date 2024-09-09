@@ -17,7 +17,7 @@
                       <li class="breadcrumb-item active">Partner</li>
                     </ol>
                   </div>
-                </div>
+                </div>    
               </div>
             </div>
             <!-- Container-fluid starts-->
@@ -30,7 +30,7 @@
                       <div class="d-flex flex-wrap gap-2 mt-3 mt-md-0">
                    
                         <a class="btn btn-success" href="{{ route('partners.create') }}">
-                            Add Partner
+                            Update Partner
                         </a>
                       </div>
                     </div>
@@ -44,7 +44,7 @@
             <!-- Partner Name -->
             <div class="col-lg-6 col-sm-3 mb-3">
                 <label for="partner_name">Partner Name<span class="text-danger">*</span></label>
-                <input type="text" name="partner_name" id="partner_name" class="form-control @error('partner_name') is-invalid @enderror" placeholder="Enter Partner Name" value="{{ old('partner_name', $partner->partner_name) }}" required>
+                <input type="text" name="partner_name" id="partner_name" class="form-control @error('partner_name') is-invalid @enderror" placeholder="Enter Partner Name" value="{{ old('partner_name', $partner->partner_name) }}"    >
                 @error('partner_name')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
@@ -63,7 +63,7 @@
 
             <div class="col-lg-6 col-sm-3 mb-3">
                 <label for="partner_address">Partner Address<span class="text-danger">*</span></label>
-                <input type="text" name="partner_address" id="partner_address" class="form-control @error('partner_address') is-invalid @enderror" placeholder="Enter Partner Address" value="{{ old('partner_address', $partner->partner_address) }}" required>
+                <input type="text" name="partner_address" id="partner_address" class="form-control @error('partner_address') is-invalid @enderror" placeholder="Enter Partner Address" value="{{ old('partner_address', $partner->partner_address) }}"    >
                 @error('partner_address')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
@@ -72,7 +72,7 @@
          
             <div class="col-lg-6 col-sm-3 mb-3">
                 <label for="country_id">Country</label>
-                <select name="country_id" id="country_id" class="form-control @error('country_id') is-invalid @enderror" required>
+                <select name="country_id" id="country_id" class="form-control @error('country_id') is-invalid @enderror"    >
                     <option value="">Select Country</option>
                     @foreach($countries as $country)
                         <option value="{{ $country->id }}" {{ old('country_id', $partner->country_id) == $country->id ? 'selected' : '' }}>
@@ -81,32 +81,35 @@
                     @endforeach
                 </select>
                 @error('country_id')
-                    <div class="invalid-feedback">{{ $message }}</div>
+                    <div class="invalid-feedback">{{ $message }}</div> 
                 @enderror
             </div>
 
    
             <div class="col-lg-6 col-sm-3 mb-3">
                 <label for="state_id">State<span class="text-danger">*</span></label>
-                <select name="state_id" id="state_id" class="form-control @error('state_id') is-invalid @enderror" required>
-                    <option value="">Select State</option>
-                    @foreach($states as $state)
-                        <option value="{{ $state->id }}" {{ old('state_id', $partner->state_id) == $state->id ? 'selected' : '' }}>
-                            {{ $state->name }}
-                        </option>
-                    @endforeach
-                </select>
-                @error('state_id')
+                    <select name="stateid" id="stateid" class="form-control select2 @error('stateid') is-invalid @enderror">
+                <option value="">Select State</option>
+        @foreach($states as $state)
+                <option value="{{ $state->id }}" {{ $partner->state_id == $state->id ? 'selected' : '' }}>
+                    {{ $state->name }}
+                </option>
+            @endforeach
+            </select>                @error('state_id')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>
 
             <div class="col-lg-6 col-sm-3 mb-3">
                 <label for="city_id">City<span class="text-danger">*</span></label>
-                <select name="city_id" id="city_id" class="form-control @error('city_id') is-invalid @enderror" required>
-                    <option value="">Select City</option>
-                    <!-- Cities will be loaded via AJAX based on state selection -->
-                </select>
+             <select name="cityid" id="cityid" class="form-control select2 @error('cityid') is-invalid @enderror">
+                <option value="">Select City</option>
+               @foreach($cities as $city)
+                <option value="{{ $city->id }}" {{ $partner->city_id == $city->id ? 'selected' : '' }}>
+                    {{ $city->name }}
+                </option>
+            @endforeach
+            </select>
                 @error('city_id')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
@@ -123,7 +126,7 @@
 
             <div class="col-lg-6 col-sm-3 mb-3">
                 <label for="county">County<span class="text-danger">*</span></label>
-                <input type="text" name="county" id="county" class="form-control @error('county') is-invalid @enderror" placeholder="Enter County" value="{{ old('county', $partner->county) }}" required>
+                <input type="text" name="county" id="county" class="form-control @error('county') is-invalid @enderror" placeholder="Enter County" value="{{ old('county', $partner->county) }}"    >
                 @error('county')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
@@ -131,7 +134,7 @@
 
             <div class="col-lg-6 col-sm-3 mb-3">
                 <label for="partner_contact_no">Partner Contact No<span class="text-danger">*</span></label>
-                <input type="text" name="partner_contact_no" id="partner_contact_no" class="form-control @error('partner_contact_no') is-invalid @enderror" placeholder="Enter Partner Contact No" value="{{ old('partner_contact_no', $partner->partner_contact_no) }}" required>
+                <input type="text" name="partner_contact_no" id="partner_contact_no" class="form-control @error('partner_contact_no') is-invalid @enderror" placeholder="Enter Partner Contact No" value="{{ old('partner_contact_no', $partner->partner_contact_no) }}"    >
                 @error('partner_contact_no')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
@@ -158,7 +161,7 @@
 
             <div class="col-lg-6 col-sm-3 mb-3">
                 <label for="partner_email">Partner Email<span class="text-danger">*</span></label>
-                <input type="email" name="partner_email" id="partner_email" class="form-control @error('partner_email') is-invalid @enderror" placeholder="Enter Partner Email" value="{{ old('partner_email', $partner->partner_email) }}" required>
+                <input type="email" name="partner_email" id="partner_email" class="form-control @error('partner_email') is-invalid @enderror" placeholder="Enter Partner Email" value="{{ old('partner_email', $partner->partner_email) }}"    >
                 @error('partner_email')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror

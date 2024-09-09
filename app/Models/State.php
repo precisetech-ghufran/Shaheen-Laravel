@@ -15,4 +15,14 @@ class State extends Model
     {
         return $this->hasMany(City::class);
     }
+
+
+public function getCities($state_id)
+{
+    $cities = City::where('state_id', $state_id)->get();
+    return response()->json($cities);
+}
+
+
+    
 }

@@ -17,7 +17,7 @@
                             <use href="../assets/svg/icon-sprite.svg#stroke-home"></use>
                           </svg></a></li>
                       <li class="breadcrumb-item">Add</li>
-                      <li class="breadcrumb-item active">State</li>
+                       <li class="breadcrumb-item active">State</li>
                     </ol>
                   </div>
                 </div>
