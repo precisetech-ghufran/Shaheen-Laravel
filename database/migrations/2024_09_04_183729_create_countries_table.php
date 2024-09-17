@@ -9,9 +9,9 @@ class CreateCountriesTable extends Migration
     public function up()
     {
         Schema::create('countries', function (Blueprint $table) {
-            $table->id('id'); // Auto-incrementing primary key
-            $table->string('country_name'); // Name of the country
-            $table->timestamps(); // Created at and updated at timestamps
+          $table->id();
+            $table->string('country_name'); 
+            $table->timestamps(); 
         });
     }
 

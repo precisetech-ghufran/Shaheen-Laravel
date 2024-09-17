@@ -121,7 +121,7 @@
                     <span>Proposed</span>
                    </a>
                   <ul class="sidebar-submenu">
-                    <li> <a href="#">Proposed Site</a></li>
+                    <li> <a href="{{route('stores.index')}}">Proposed Site</a></li>
                           <li> <a href="#">Lease Process</a></li>
                                 <li> <a href="#">Pre Construction</a></li>
                                       <li> <a href="#">Construction</a></li>
@@ -219,7 +219,7 @@
                     <span>Expenses</span>
                    </a>
                   <ul class="sidebar-submenu">
-                    <li> <a href="#">Development Expenses  </a></li>
+                    <li> <a href="{{route('project_dev_exp.index')}}">Development Expenses  </a></li>
                      <li> <a href="{{route('expense_heads.index')}}">Expense Head  </a></li>
                    
 

@@ -10,7 +10,7 @@ class CreateFranchisesTable extends Migration
     {
         Schema::create('franchises', function (Blueprint $table) {
             $table->id();
-            $table->string('franchise_name'); // The * indicates this is a required field
+            $table->string('franchise_name'); 
             $table->string('website')->nullable();
             $table->string('contact_person_name')->nullable();
             $table->string('franchisor_contact_person')->nullable();
@@ -23,7 +23,7 @@ class CreateFranchisesTable extends Migration
             $table->string('opening_contact_person')->nullable();
             $table->string('opening_person_email')->nullable();
             $table->string('opening_person_phone_no')->nullable();
-            $table->string('franchise_image')->nullable(); // For storing image paths
+            $table->string('franchise_image')->nullable(); 
             $table->timestamps();
         });
     }

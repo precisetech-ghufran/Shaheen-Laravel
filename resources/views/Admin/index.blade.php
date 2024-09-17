@@ -356,5 +356,45 @@ $(document).ready(function() {
         });
     });
 </script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+    // Load cities if a state is already selected (edit mode)
+    var stateId = $('#stateid').val(); // Get selected state ID
+    var selectedCityId = {{ $store->city_id ?? 'null' }}; // Get the selected city ID from the store data
+
+    if (stateId) {
+        loadCities(stateId, selectedCityId); // Load cities for the selected state
+    }
+
+    // On change of state, load the cities
+    $('#stateid').on('change', function() {
+        var stateId = $(this).val();
+        loadCities(stateId, null); // Reset selected city when changing the state
+    });
+
+    function loadCities(stateId, selectedCityId) {
+        if (stateId) {
+            $.ajax({
+                url: '/get-cities-by-state/' + stateId, // Your route to fetch cities based on state
+                type: 'GET',
+                success: function(cities) {
+                    $('#cityid').empty(); // Clear the city select
+                    $('#cityid').append('<option value="">Select City</option>'); // Add placeholder
+
+                    $.each(cities, function(key, city) {
+                        var selected = (selectedCityId && city.id == selectedCityId) ? 'selected' : '';
+                        $('#cityid').append('<option value="' + city.id + '" ' + selected + '>' + city.name + '</option>');
+                    });
+                }
+            });
+        } else {
+            $('#cityid').empty();
+            $('#cityid').append('<option value="">Select City</option>');
+        }
+    }
+});
+
+</script>
   </body>
 </html>

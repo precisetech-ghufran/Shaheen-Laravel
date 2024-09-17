@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-             $table->string('profile_image')->nullable(); 
-              $table->string('user_name')->nullable(); 
-               $table->string('phone_number')->nullable(); 
+        Schema::create('store_statuses', function (Blueprint $table) {
+            $table->id();
+               $table->string('store_status');
+            $table->timestamps();
         });
     }
 
@@ -23,8 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('store_statuses');
     }
 };

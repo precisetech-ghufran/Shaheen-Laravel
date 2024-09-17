@@ -19,8 +19,15 @@ use App\Http\Controllers\ExpenceReportController;
  use App\Http\Controllers\SearchController;
 use App\Http\Controllers\VendorController;
 use App\Http\Controllers\ExpenseHeadController;
+use App\Http\Controllers\ProjectDevelopmentExpenseController;
+ use App\Http\Controllers\StoreController;
+
+use App\Http\Controllers\StoreStatusHistroyController;
 
  
+
+
+
 Route::get('/', function () {
     return view('login');
 });
@@ -43,7 +50,7 @@ Route::controller(Dashboard::class)->group(function(){
 
 });
 
-
+ 
 
 
 
@@ -63,6 +70,9 @@ Route::controller(MasterController::class)->group(function(){
 
 
 Route::get('/cities-by-state', [CityController::class, 'getCitiesByState'])->name('cities.byState');
+Route::resource('stores', StoreController::class);
+
+Route::resource('Store_staus_update', StoreStatusHistroyController::class);
 
 Route::resource('states', StateController::class);
 Route::resource('cities', CityController::class);
@@ -75,7 +85,7 @@ Route::resource('partners', PartnerController::class);
 Route::resource('expense_heads', ExpenseHeadController::class);
 Route::resource('Vendors', VendorController::class);
 Route::resource('vendor-groups', VendorGroupController::class);
-
+Route::resource('project_dev_exp', ProjectDevelopmentExpenseController::class);
 Route::controller(RoleController::class)->group(function(){
     Route::get('/all/permission','AllPermission')->name('all.permission'); 
     Route::get('/add/permission','AddPermission')->name('add.permission');

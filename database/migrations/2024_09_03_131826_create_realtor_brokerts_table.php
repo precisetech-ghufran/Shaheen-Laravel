@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('realtor_brokerts', function (Blueprint $table) {
            $table->id();
-            $table->string('realtor_name'); // Required
-            $table->string('company_name')->nullable(); // Optional
+            $table->string('realtor_name'); 
+            $table->string('company_name')->nullable(); 
             $table->string('website')->nullable();
             $table->string('realtor_address')->nullable();
-            $table->unsignedBigInteger('stateid')->nullable(); // Foreign Key
-            $table->unsignedBigInteger('cityid')->nullable(); // Foreign Key
+            $table->unsignedBigInteger('stateid')->nullable(); 
+            $table->unsignedBigInteger('cityid')->nullable(); 
             $table->string('realtor_zip_code')->nullable();
             $table->string('realtor_county')->nullable();
             $table->string('realtor_phone_no')->nullable();

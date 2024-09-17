@@ -15,17 +15,23 @@
     <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
     
     <!-- Themify icon-->
-    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/themify.css">
+
+    
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors/themify.css')}}">
     <!-- Feather icon-->
-    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/feather-icon.css">
+   
+    <link rel="stylesheet" type="text/css" href=" {{asset('assets/css/vendors/feather-icon.css')}}">
     <!-- Plugins css start-->
     <!-- Plugins css Ends-->
     <!-- Bootstrap css-->
-    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/bootstrap.css">
+    
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors/bootstrap.css')}}">
     <!-- App css-->
-    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+    
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
     <!-- Responsive css-->
-    <link rel="stylesheet" type="text/css" href="../assets/css/responsive.css">
+
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/responsive.css')}}">
   </head>
   <body>
     <!-- login page start-->
@@ -36,7 +42,7 @@
             <div>
                 <div>
                     <a class="logo" href="index.html">
-                        <img class="img-fluid for-light w-75" src="../assets/images/logo/logo.png" alt="looginpage">
+                        <img class="img-fluid for-light w-75" src="{{asset('assets/images/logo/logo.png')}}" alt="loginpage">
                     </a>
                 </div>
              
@@ -89,20 +95,26 @@
         </div>
       </div>
       <!-- latest jquery-->
-      <script src="../assets/js/jquery.min.js"></script>
+      
+      <script src="{{asset('assets/js/jquery.min.js')}}"></script>
       <!-- Bootstrap js-->
-      <script src="../assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+     
+      <script src="{{asset('assets/js/bootstrap/bootstrap.bundle.min.js')}}"></script>
       <!-- feather icon js-->
-      <script src="../assets/js/icons/feather-icon/feather.min.js"></script>
-      <script src="../assets/js/icons/feather-icon/feather-icon.js"></script>
+      
+      <script src="{{asset('assets/js/icons/feather-icon/feather.min.js')}}"></script>
+     
+      <script src=" {{asset('assets/js/icons/feather-icon/feather-icon.js')}}"></script>
       <!-- scrollbar js-->
       <!-- Sidebar jquery-->
-      <script src="../assets/js/config.js"></script>
+      
+      <script src="{{asset('assets/js/config.js')}}"></script>
       <!-- Plugins JS start-->
       <!-- calendar js-->
       <!-- Plugins JS Ends-->
       <!-- Theme js-->
-      <script src="../assets/js/script.js"></script>
+      
+      <script src="{{asset('assets/js/script.js')}}"></script>
     </div>
   </body>
 </html>

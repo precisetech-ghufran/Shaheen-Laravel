@@ -148,7 +148,7 @@
                 @error('driver_license_number')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
-            </div>
+            </div> 
 
             <div class="col-lg-6 col-sm-3 mb-3">
                 <label for="partner_email">Partner Email<span class="text-danger">*</span></label>

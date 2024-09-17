@@ -17,7 +17,7 @@ class Landlord extends Model
         'landlord_address',
         'stateid',
         'cityid',
-        'landlord_zip_code',
+        'landlord_zip_code', 
         'landlord_county',
         'contact_person',
         'landlord_contact_no',
