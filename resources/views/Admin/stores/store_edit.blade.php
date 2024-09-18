@@ -1,4 +1,3 @@
- <div class="tab-pane fade" id="edit-store" role="tabpanel" aria-labelledby="edit-store-tab">
                                                         <div class="meta-body"> 
  <div class="card"> 
                     <div class="card-header d-block d-md-flex justify-content-between">
@@ -284,4 +283,4 @@ Site Condition </label>
                     </div>
                   </div>
               </div>
-          </div>
+        

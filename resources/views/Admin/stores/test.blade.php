@@ -89,7 +89,7 @@
                             <div class="col-xl-3 col-sm-6">
                               <div class="card o-hidden small-widget">
                                 <div class="card-body total-Complete border-b-secondary border-2">
-                                  <span class="f-light f-w-500 f-14">Total Partners</span>
+                                  <span class="f-light f-w-500 f-14">Total Oders_link</span>
                                   <div class="project-details">
                                     <div class="project-counter">
                                       <h2 class="f-w-600">475</h2><span class="f-12 f-w-400">(This month) </span>
@@ -143,7 +143,7 @@
                               </div>
                             </div>
                             <div class="col-12"> 
-                                <div class="card"> 
+                                <div class="card overflow-x: auto; white-space: nowrap;"> 
                                     <!-- <div class="card-header d-block d-md-flex justify-content-between">
                                         <h5>FR000453ER3</h5>
                                         <div class="d-flex gap-2 mt-3 mt-md-0">
@@ -157,220 +157,834 @@
                                     </div> -->
                                     <div class="card-body">
                                         <div class="row g-xl-5 g-3">
-                                            <div class="sidebar-body advance-options">
+                                            <div >
                                                 <ul class="nav nav-tabs border-tab mb-0" id="advance-option-tab" role="tablist">
-                                                    <li class="nav-item" role="presentation"><a class="nav-link active" id="profile-tab" data-bs-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="true">Store</a></li>
-                                                    <li class="nav-item" role="presentation"><a class="nav-link" id="lease-tab" data-bs-toggle="tab" href="#lease" role="tab" aria-controls="lease" aria-selected="false" tabindex="-1">Address Information</a></li>
-                                                      <li class="nav-item" role="presentation"><a class="nav-link" id="all-attachments-documents-tab" data-bs-toggle="tab" href="#all-attachments-documents" role="tab" aria-controls="all-attachments-documents" aria-selected="false" tabindex="-1">Lease Information</a></li>
-                                                    <li class="nav-item" role="presentation"><a class="nav-link" id="construction-tab" data-bs-toggle="tab" href="#construction" role="tab" aria-controls="construction" aria-selected="false" tabindex="-1">Social Media Information</a></li>
-                                                    <li class="nav-item" role="presentation"><a class="nav-link" id="landlord-and-realtor-tab" data-bs-toggle="tab" href="#landlord-and-realtor" role="tab" aria-controls="landlord-and-realtor" aria-selected="false" tabindex="-1">Unemployment Insurance <br/> Employer Registration Portal</a></li>
-                                                    <li class="nav-item" role="presentation"><a class="nav-link" id="permits-and-license-tab" data-bs-toggle="tab" href="#permits-and-license" role="tab" aria-controls="permits-and-license" aria-selected="false" tabindex="-1">Employer Identification Number</a></li>
-                                                    <li class="nav-item" role="presentation"><a class="nav-link" id="vendors-tab" data-bs-toggle="tab" href="#vendors" role="tab" aria-controls="vendors" aria-selected="false" tabindex="-1">Orders Links</a></li>
-                                                    <li class="nav-item" role="presentation"><a class="nav-link" id="partners-tab" data-bs-toggle="tab" href="#partners" role="tab" aria-controls="partners" aria-selected="false" tabindex="-1">Partners</a></li>
+                                                    <li class="nav-item" role="presentation"><a class="nav-link" id="edit-store-tab" data-bs-toggle="tab" href="#edit-store" role="tab" aria-controls="edit-store" aria-selected="true" tabindex="-1">Store Edit</a></li>
+                                                    <li class="nav-item" role="presentation"><a class="nav-link" id="Basic_Information-tab" data-bs-toggle="tab" href="#Basic_Information" role="tab" aria-controls="Basic_Information" aria-selected="true" tabindex="-1">Basic Information</a></li>
+                                                    <li class="nav-item" role="presentation"><a class="nav-link" id="Address_Information-tab" data-bs-toggle="tab" href="#Address_Information" role="tab" aria-controls="Address_Information" aria-selected="true" tabindex="-1">Address Information</a></li>
+                                                    <li class="nav-item" role="presentation"><a class="nav-link" id="Social_Media_Information-tab" data-bs-toggle="tab" href="#Social_Media_Information" role="tab" aria-controls="Social_Media_Information" aria-selected="true" tabindex="-1">Social Media Information</a></li>
+                                                    <li class="nav-item" role="presentation"><a class="nav-link" id="Unemployment_Insurance_employer_regitration-tab" data-bs-toggle="tab" href="#Unemployment_Insurance_employer_regitration" role="tab" aria-controls="Unemployment_Insurance_employer_regitration" aria-selected="true" tabindex="-1">Unemployment Insurance Employer Registration Portal </a></li>
+                                                    <li class="nav-item" role="presentation"><a class="nav-link" id="Employer_Identification_Number-tab" data-bs-toggle="tab" href="#Employer_Identification_Number" role="tab" aria-controls="Employer_Identification_Number" aria-selected="true" tabindex="-1">Employer Identification Number</a></li>
+                                                    <li class="nav-item" role="presentation"><a class="nav-link" id="Oders_link-tab" data-bs-toggle="tab" href="#Oders_link" role="tab" aria-controls="Oders_link" aria-selected="false" tabindex="-1">Orders Links</a></li>
                                                     <li class="nav-item" role="presentation"><a class="nav-link" id="banking-tab" data-bs-toggle="tab" href="#banking" role="tab" aria-controls="banking" aria-selected="false" tabindex="-1">Banking</a></li>
-                                                   
+                                                    <li class="nav-item" role="presentation"><a class="nav-link active" id="all-attachments-documents-tab" data-bs-toggle="tab" href="#all-attachments-documents" role="tab" aria-controls="all-attachments-documents" aria-selected="false">All Attachments</a></li>
                                                 </ul>
-
                                                 <div class="tab-content" id="advance-option-tabContent">
+                                                   
+                                                            
+                                                       <div class="tab-pane fade" id="edit-store" role="tabpanel" aria-labelledby="edit-store-tab">
+                                                        <div class="meta-body"> 
+ <div class="card"> 
+                    <div class="card-header d-block d-md-flex justify-content-between">
+                      <h5>Edit Store {{$store->store_business_name}}</h5>
+                      <div class="d-flex flex-wrap gap-2 mt-3 mt-md-0">
+                   
+                        <a class="btn btn-success" href="{{ route('stores.index') }}">
+                            View Store
+                        </a>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="row g-xl-5 g-3">
+                        <div class="col-sm-12">
+                        <form action="{{ route('stores.update',$store->id) }}" method="POST">
+        @csrf
+        @method('PUT')
+        <div class="row">
+            <!-- Store Business Name -->
+            <div class="col-lg-4">
+                <div class="form-group">
+                    <label for="store_business_name">Store Business Name</label>
+                    <input type="text" name="store_business_name" class="form-control @error('store_business_name') is-invalid @enderror" placeholder="Enter Store Business Name" value="{{ old('store_business_name',$store->store_business_name) }}">
+                    @error('store_business_name')
+                        <span class="invalid-feedback">{{ $message }}</span>
+                    @enderror
+                </div>
+            </div>
+            <!-- Date -->
+            <div class="col-lg-4">
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="date" name="date" class="form-control @error('date') is-invalid @enderror" placeholder="Enter Date" value="{{ old('date',$store->date) }}">
+                    @error('date')
+                        <span class="invalid-feedback">{{ $message }}</span>
+                    @enderror
+                </div>
+            </div>
+            <!-- Stored By -->
+            <div class="col-lg-4">
+                <div class="form-group">
+                    <label for="stored_by">Stored By</label>
+                    <input type="text" name="stored_by" class="form-control @error('stored_by') is-invalid @enderror" placeholder="Enter Stored By" value="{{ old('stored_by',$store->stored_by) }}">
+                    @error('stored_by')
+                        <span class="invalid-feedback">{{ $message }}</span>
+                    @enderror
+                </div>
+            </div>
+        </div>
+
+<br/>
 
 
 
-                                                    <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                               @include('admin.stores.store_edit')
-                                                    </div>
+        <div class="row">
+             <div class="col-lg-4 ">
+                <label for="stateid">State<span class="text-danger">*</span></label>
+                <select name="stateid" id="stateid" class="form-control @error('stateid') is-invalid @enderror">
+                    <option value="">Select State</option>
+                    @foreach ($states as $state)
+                        <option value="{{ $state->id }}" {{ $state->id == old('stateid', $store->stateid) ? 'selected' : '' }}>
+                            {{ $state->name }}
+                        </option>
+                    @endforeach
+                </select>
+                @error('stateid')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+
+         
+            <div class="col-lg-4 ">
+                <label for="cityid">City<span class="text-danger">*</span></label>
+            <select name="cityid" id="cityid" class="form-control @error('cityid') is-invalid @enderror">
+                    <option value="">Select City</option>
+                    @foreach ($cities as $city)
+                        <option value="{{ $city->id }}" {{ $city->id == old('cityid', $store->cityid) ? 'selected' : '' }}>
+                            {{ $city->name }}
+                        </option>
+                    @endforeach
+                </select>
+                @error('cityid')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+
+
+             <div class="col-lg-4 ">
+                 <label for="country_id">Country</label>
+                <select name="country_id" id="country_id" class="form-control select2 @error('country_id') is-invalid @enderror"   >
+                    <option value="">Select Country</option>
+                    @foreach($countries as $country)
+                        <option value="{{ $country->id }}" {{ $store->country_id == $country->id ? 'selected' : '' }}>
+                            {{ $country->country_name }}
+                        </option>
+                    @endforeach
+                </select>
+                @error('country_id')
+                     <div class="invalid-feedback">{{ $message }}</div> 
+                @enderror
+            </div>
+        </div>
+<br/>
+
+
+        <div class="row">
+            <!-- Area Square Foot -->
+            <div class="col-lg-4">
+                <div class="form-group">
+                    <label for="area_square_foot">Area Square Foot</label>
+                    <input type="number" name="area_square_foot" class="form-control @error('area_square_foot') is-invalid @enderror" placeholder="Enter Area Square Foot" value="{{ old('area_square_foot',$store->area_square_foot) }}">
+                    @error('area_square_foot')
+                        <span class="invalid-feedback">{{ $message }}</span>
+                    @enderror
+                </div>
+            </div>
+            <!-- Site Address -->
+            <div class="col-lg-4">
+                <div class="form-group">
+                    <label for="site_address">Site Address</label>
+                    <input type="text" name="site_address" class="form-control @error('site_address') is-invalid @enderror" placeholder="Enter Site Address" value="{{ old('site_address',$store->site_address) }}">
+                    @error('site_address')
+                        <span class="invalid-feedback">{{ $message }}</span>
+                    @enderror
+                </div>
+            </div>
+            <!-- Zip Code -->
+            <div class="col-lg-4">
+                <div class="form-group">
+                    <label for="zip_code">Zip Code</label>
+                    <input type="text" name="zip_code" class="form-control @error('zip_code') is-invalid @enderror" placeholder="Enter Zip Code" value="{{ old('zip_code',$store->zip_code) }}">
+                    @error('zip_code')
+                        <span class="invalid-feedback">{{ $message }}</span>
+                    @enderror
+                </div>
+            </div>
+        </div>
+<br/>
+        <div class="row">
+            <!-- Lease Asking Rent -->
+            <div class="col-lg-4">
+                <div class="form-group">
+                    <label for="lease_asking_rent">Lease Asking Rent</label>
+                    <input type="number" name="lease_asking_rent" class="form-control @error('lease_asking_rent') is-invalid @enderror" placeholder="Enter Lease Asking Rent" value="{{ old('lease_asking_rent',$store->lease_asking_rent) }}">
+                    @error('lease_asking_rent')
+                        <span class="invalid-feedback">{{ $message }}</span>
+                    @enderror
+                </div>
+            </div>
+            <!-- Proposed NNN -->
+            <div class="col-lg-4">
+                <div class="form-group">
+                    <label for="proposed_nnn">Proposed NNN</label>
+                    <input type="number" name="proposed_nnn" class="form-control @error('proposed_nnn') is-invalid @enderror" placeholder="Enter Proposed NNN" value="{{ old('proposed_nnn',$store->proposed_nnn) }}">
+                    @error('proposed_nnn')
+                        <span class="invalid-feedback">{{ $message }}</span>
+                    @enderror
+                </div>
+            </div>
+            <!-- Site Condition -->
+            <div class="col-lg-4">
+              <div class="form-group">
+        <label for="buy_and_lease">Buy or Lease</label>
+        <div>
+            <label>
+                <input type="radio" name="buy_and_lease" value="buy" 
+                    {{ $store->buy_and_lease == 'buy' ? 'checked' : '' }}> Buy
+            </label>
+            <label>
+                <input type="radio" name="buy_and_lease" value="lease" 
+                    {{ $store->buy_and_lease == 'lease' ? 'checked' : '' }}> Lease
+            </label>
+        </div>
+        @error('buy_and_lease')
+            <div class="text-danger">{{ $message }}</div>
+        @enderror
+    </div>
+            </div>
+        </div>
+
+        <br/>
 
 
 
-                                                    <div class="tab-pane fade" id="lease" role="tabpanel" aria-labelledby="lease-tab">
-                                                       @include('admin.stores.Address-Information')
-                                                             </div>
+<div class="row">
+
+       <div class="col-lg-4">
+         <div class="form-group">
+            <label >Franchise </label>
+              <select class="form-select" aria-label="Default select example" name="franchise_id">
+                <option value="">Select Franchise</option>
+                @foreach($franchise as $fran)
+                                      <option value="{{$fran->id}}" {{$store->franchise_id == $fran->id ? 'selected' : '' }}>{{$fran->franchise_name}}</option>
+                                      @endforeach
+                                    </select>
+                                </div>
+            </div>
+
+              <div class="col-lg-4">
+                 <div class="form-group">
+            <label >  
+Site Rank </label>
+              <select class="form-select" aria-label="Default select example" name="site_rank">
+                <option value="">Select Site Rank</option>
+             
+                                       <option value="1" {{ $store->site_rank == 1 ? 'selected' : '' }}>1</option>
+    <option value="2" {{$store->site_rank == 2 ? 'selected' : '' }}>2</option>
+    <option value="3" {{ $store->site_rank == 3 ? 'selected' : '' }}>3</option>
+    <option value="4" {{$store->site_rank == 4 ? 'selected' : '' }}>4</option>
+    <option value="5" {{ $store->site_rank == 5 ? 'selected' : '' }}>5</option>
+                                    
+                                    </select>
+
+                                </div>
+            </div>
 
 
 
-                                                             <div class="tab-pane fade" id="all-attachments-documents" role="tabpanel" aria-labelledby="all-attachments-documents-tab">
-                                                      @include('admin.stores.lease_information')
-                                                    </div>
 
-                                                    
+              <div class="col-lg-4">
+                 <div class="form-group">
+            <label >
+Site Condition </label>
+              <select class="form-select" aria-label="Default select example" name="site_condition">
+                <option value="">Select Site Condition</option>
+              
+                              <option value="1" {{ $store->site_condition == 1 ? 'selected' : '' }}>Second Generation restaurant</option>
+                                       <option value="2" {{ $store->site_condition== 2 ? 'selected' : '' }}>Empty building</option>
+                                        <option value="3" {{ $store->site_condition == 3 ? 'selected' : '' }}>Land</option>
 
-                                                    <div class="tab-pane fade" id="construction" role="tabpanel" aria-labelledby="construction-tab">
-                                                       @include('admin.stores.social_media_inforamtion')
-                                                    </div>
-                                                  
+                                        </select> 
+                    
 
-
-                                                    <div class="tab-pane fade" id="landlord-and-realtor" role="tabpanel" aria-labelledby="landlord-and-realtor-tab">
-                                                       @include('admin.stores.unemployement_registration_portal')
-                                                    </div>
+            </div>
+        </div>
+</div>
 
 
 
 
 
-                                                    <div class="tab-pane fade" id="permits-and-license" role="tabpanel" aria-labelledby="permits-and-license-tab">
-                                                        @include('admin.stores.emp_identification_number')
-                                                    
-                                                    </div>
-                                                    <div class="tab-pane fade" id="vendors" role="tabpanel" aria-labelledby="vendors-tab">
-                                                        @include('admin.stores.order_links')
-                                                    </div>
-                                                    <div class="tab-pane fade" id="partners" role="tabpanel" aria-labelledby="partners-tab">
+
+<br/>
+
+
+
+        <div class="row"> 
+
+
+                <div class="col-lg-4">
+                <div class="form-group">
+                    <label for="proposed_nnn">Map Location Link</label>
+                    <input type="text" name="map_location_link" class="form-control @error('map_location_link') is-invalid @enderror" placeholder="Enter Map Location Link" value="{{ $store->map_location_link }}">
+                 
+                    @error('map_location_link')
+                        <span class="invalid-feedback">{{ $message }}</span>
+                    @enderror
+                </div>
+            </div>
+
+      <div class="col-lg-8">
+                <div class="form-group">
+                    <label for="proposed_nnn">Details</label>
+                    <textarea type="text" name="details" class="form-control @error('proposed_nnn') is-invalid @enderror" placeholder="Enter Details " value="{{ $store->details }}">
+                        {{ $store->details }}
+                    </textarea>
+                    @error('details')
+                        <span class="invalid-feedback">{{ $message }}</span>
+                    @enderror
+                </div>
+            </div>
+
+         
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-group mt-4">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+
+
+
+                                                       
+                                                 
+                                                                 <div class="tab-pane fade" id="Social_Media_Information" role="tabpanel" aria-labelledby="Social_Media_Information-tab">
                                                         <div class="meta-body">
-                                                            <div class="list-product">
-                                                            <div class="datatable-wrapper datatable-loading no-footer sortable searchable fixed-columns">
-                                                                <div class="datatable-container">
-                                                                    <table class="table datatable-table">
-                                                                    <thead> 
-                                                                        <tr> 
-                                                                        <th>
-                                                                            <div class="form-check"> 
-                                                                            <input class="form-check-input checkbox-primary" type="checkbox">
-                                                                            </div>
-                                                                        </th>
-                                                                        <th> <span class="f-light f-w-600">Date</span></th>
-                                                                        <th> <span class="f-light f-w-600">Partner Name</span></th>
-                                                                        <th> <span class="f-light f-w-600">Details</span></th>
-                                                                        <th> <span class="f-light f-w-600">Equity Share</span></th>
-                                                                        <th> <span class="f-light f-w-600">Profit Share</span></th>
-                                                                        <th> <span class="f-light f-w-600">Options</span></th>
-                                                                        </tr>
-                                                                    </thead>
-                                                                    <tbody> 
-                                                                        <tr class="product-removes">
-                                                                            <td>
-                                                                                <div class="form-check"> 
-                                                                                <input class="form-check-input checkbox-primary" type="checkbox">
-                                                                                </div>
-                                                                            </td>
-                                                                            <td> 
-                                                                                <div class="product-names">
-                                                                                <p class="f-light">06-10-2024</p>
-                                                                                </div>
-                                                                            </td>
-                                                                            <td> 
-                                                                                <div class="product-names">
-                                                                                    <p class="f-light">Shaheeh Group</p>
-                                                                                </div>
-                                                                            </td>
-                                                                            <td> 
-                                                                                <div class="product-names">
-                                                                                    <p class="f-light"></p>
-                                                                                </div>
-                                                                            </td>
-                                                                            <td> 
-                                                                                <div class="product-names">
-                                                                                    <p class="f-light">20%</p>
-                                                                                </div>
-                                                                            </td>
-                                                                            <td> 
-                                                                                <div class="product-names">
-                                                                                    <p class="f-light">10%</p>
-                                                                                </div>
-                                                                            </td>
-                                                                            <td> 
-                                                                                <div class="btn-group">
-                                                                                    <button class="btn btn-primary" type="button">Edit</button>
-                                                                                </div>
-                                                                            </td>
-                                                                        </tr> 
-                                                                        <tr class="product-removes">
-                                                                            <td>
-                                                                                <div class="form-check"> 
-                                                                                <input class="form-check-input checkbox-primary" type="checkbox">
-                                                                                </div>
-                                                                            </td>
-                                                                            <td> 
-                                                                                <div class="product-names">
-                                                                                <p class="f-light">06-10-2024</p>
-                                                                                </div>
-                                                                            </td>
-                                                                            <td> 
-                                                                                <div class="product-names">
-                                                                                    <p class="f-light">Shaheeh Group</p>
-                                                                                </div>
-                                                                            </td>
-                                                                            <td> 
-                                                                                <div class="product-names">
-                                                                                    <p class="f-light"></p>
-                                                                                </div>
-                                                                            </td>
-                                                                            <td> 
-                                                                                <div class="product-names">
-                                                                                    <p class="f-light">20%</p>
-                                                                                </div>
-                                                                            </td>
-                                                                            <td> 
-                                                                                <div class="product-names">
-                                                                                    <p class="f-light">10%</p>
-                                                                                </div>
-                                                                            </td>
-                                                                            <td> 
-                                                                                <div class="btn-group">
-                                                                                    <button class="btn btn-primary" type="button">Edit</button>
-                                                                                </div>
-                                                                            </td>
-                                                                        </tr> 
-                                                                        <tr class="product-removes">
-                                                                            <td>
-                                                                                <div class="form-check"> 
-                                                                                <input class="form-check-input checkbox-primary" type="checkbox">
-                                                                                </div>
-                                                                            </td>
-                                                                            <td> 
-                                                                                <div class="product-names">
-                                                                                <p class="f-light">06-10-2024</p>
-                                                                                </div>
-                                                                            </td>
-                                                                            <td> 
-                                                                                <div class="product-names">
-                                                                                    <p class="f-light">Shaheeh Group</p>
-                                                                                </div>
-                                                                            </td>
-                                                                            <td> 
-                                                                                <div class="product-names">
-                                                                                    <p class="f-light"></p>
-                                                                                </div>
-                                                                            </td>
-                                                                            <td> 
-                                                                                <div class="product-names">
-                                                                                    <p class="f-light">20%</p>
-                                                                                </div>
-                                                                            </td>
-                                                                            <td> 
-                                                                                <div class="product-names">
-                                                                                    <p class="f-light">10%</p>
-                                                                                </div>
-                                                                            </td>
-                                                                            <td> 
-                                                                                <div class="btn-group">
-                                                                                    <button class="btn btn-primary" type="button">Edit</button>
-                                                                                </div>
-                                                                            </td>
-                                                                        </tr> 
-                                                                    </tbody>
-                                                                    </table>
-                                                                </div>
-                                                                </div>
-                                                                <div class="datatable-bottom">
-                                                                    <div class="datatable-info">Showing 1 to 3 of 3 entries</div>
-                                                                    <nav class="datatable-pagination">
-                                                                        <ul class="datatable-pagination-list">
-                                                                            <li class="datatable-pagination-list-item datatable-hidden datatable-disabled">
-                                                                                <a data-page="1" class="datatable-pagination-list-item-link">‹</a>
-                                                                            </li>
-                                                                            <li class="datatable-pagination-list-item datatable-active">
-                                                                                <a data-page="1" class="datatable-pagination-list-item-link">1</a>
-                                                                            </li>
-                                                                            <li class="datatable-pagination-list-item">
-                                                                                <a data-page="2" class="datatable-pagination-list-item-link">2</a>
-                                                                            </li>
-                                                                            <li class="datatable-pagination-list-item">
-                                                                                <a data-page="2" class="datatable-pagination-list-item-link">›</a>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </nav>
-                                                                </div>
-                                                            </div>
+     <div class="card"> 
+                    <div class="card-header d-block d-md-flex justify-content-between">
+                      <h4>Store {{$store->store_business_name}}</h4>
+                      <div class="d-flex flex-wrap gap-2 mt-3 mt-md-0">
+                   
+                        <a class="btn btn-success" href="{{route('franchises.create')}}">
+Add Franchise
+                        </a>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="row g-xl-5 g-3">
+                        <div class="col-sm-12">
+                                           <form action="#" method="POST">
+    @csrf
+    @method('PUT')
+    <div class="row"> 
+        <!-- Facebook Link -->
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="facebook_link">Facebook Link</label>
+                <input type="url" class="form-control @error('facebook_link') is-invalid @enderror" id="facebook_link" name="facebook_link" 
+                    placeholder="Enter Facebook link" value="{{ old('facebook_link') }}">
+                @error('facebook_link')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+        </div>
+
+        <!-- Tiktok Link -->
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="tiktok_link">Tiktok Link</label>
+                <input type="url" class="form-control @error('tiktok_link') is-invalid @enderror" id="tiktok_link" name="tiktok_link" 
+                    placeholder="Enter Tiktok link" value="{{ old('tiktok_link') }}">
+                @error('tiktok_link')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+        </div>
+
+        <!-- Instagram Link -->
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="insta_link">Instagram Link</label>
+                <input type="url" class="form-control @error('insta_link') is-invalid @enderror" id="insta_link" name="insta_link" 
+                    placeholder="Enter Instagram link" value="{{ old('insta_link') }}">
+                @error('insta_link')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+        </div>
+  
+        <!-- Instagram Username -->
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="insta_username">Instagram Username</label>
+                <input type="text" class="form-control @error('insta_username') is-invalid @enderror" id="insta_username" name="insta_username" 
+                    placeholder="Enter Instagram username" value="{{ old('insta_username') }}">
+                @error('insta_username')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+        </div>
+
+        <!-- Instagram Password -->
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="insta_password">Instagram Password</label>
+                <input type="password" class="form-control @error('insta_password') is-invalid @enderror" id="insta_password" name="insta_password" 
+                    placeholder="Enter Instagram password">
+                @error('insta_password')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+        </div>
+
+        <!-- Tiktok Username -->
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="tiktok_username">Tiktok Username</label>
+                <input type="text" class="form-control @error('tiktok_username') is-invalid @enderror" id="tiktok_username" name="tiktok_username" 
+                    placeholder="Enter Tiktok username" value="{{ old('tiktok_username') }}">
+                @error('tiktok_username')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+        </div>
+ 
+        <!-- Tiktok Password -->
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="tiktok_password">Tiktok Password</label>
+                <input type="password" class="form-control @error('tiktok_password') is-invalid @enderror" id="tiktok_password" name="tiktok_password" 
+                    placeholder="Enter Tiktok password">
+                @error('tiktok_password')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+                               
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+                      <div class="tab-pane fade" id="Basic_Information" role="tabpanel" aria-labelledby="Basic_Information-tab">
+                                                        <div class="meta-body">
+     <div class="card"> 
+                    <div class="card-header d-block d-md-flex justify-content-between">
+                      <h4>Store {{$store->store_business_name}}</h4>
+                      <div class="d-flex flex-wrap gap-2 mt-3 mt-md-0">
+                   
+                        <a class="btn btn-success" href="{{route('franchises.create')}}">
+Add Franchise
+                        </a>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="row g-xl-5 g-3">
+                        <div class="col-sm-12">
+                                                      <form action="#" method="POST" enctype="multipart/form-data">
+        @csrf
+        @method('PUT')
+
+        <div class="row">
+              <div class="col-lg-4 col-sm-12 mb-3">
+         <div class="form-group">
+            <label >Franchise </label>
+              <select class="form-select" aria-label="Default select example" name="franchise_id">
+                <option value="">Select Franchise</option>
+                @foreach($franchise as $fran)
+                                      <option value="{{$fran->id}}" {{$store->franchise_id == $fran->id ? 'selected' : '' }}>{{$fran->franchise_name}}</option>
+                                      @endforeach
+                                    </select>
+                                </div>
+            </div>
+
+
+
+
+                 <div class="col-lg-4 col-sm-12 mb-3">
+                 <div class="form-group">
+                                    <label for="construction_contact_email">Official Email</label>
+                                    <input type="email" id="construction_contact_email" name="construction_contact_email" class="form-control @error('construction_contact_email') is-invalid @enderror" value="">
+                                    @error('construction_contact_email')
+                                        <span class="invalid-feedback">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                </div>
+
+            <div class="col-lg-4 col-sm-12 mb-3">
+                <div class="form-group">
+                    <label for="website">Website</label>
+                    <input type="url" id="website" name="website" class="form-control @error('website') is-invalid @enderror" value="">
+                    @error('website')
+                        <span class="invalid-feedback">{{ $message }}</span>
+                    @enderror
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-12 mb-3">
+                <div class="form-group">
+                    <label for="contact_person_name">Landline Phone No ---</label>
+                    <input type="text" id="contact_person_name" name="contact_person_name" class="form-control @error('contact_person_name') is-invalid @enderror" value="">
+                    @error('contact_person_name')
+                        <span class="invalid-feedback">{{ $message }}</span>
+                    @enderror
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-12 mb-3">
+                <div class="form-group">
+                    <label for="franchisor_contact_person">Whatsapp Number --</label>
+                    <input type="text" id="franchisor_contact_person" name="franchisor_contact_person" class="form-control @error('franchisor_contact_person') is-invalid @enderror" value="">
+                    @error('franchisor_contact_person')
+                        <span class="invalid-feedback">{{ $message }}</span>
+                    @enderror
+                </div>
+            </div>
+
+            </div>
+
+          
+
+
+        
+
+          
+
+            <div class="col-lg-12 mb-3">
+                <button type="submit" class="btn btn-primary">Update</button>
+            </div>
+        </div>
+    </form>
+                               
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+                                           
+                                                  
+                                                           
+                                                               <div class="tab-pane fade" id="Address_Information" role="tabpanel" aria-labelledby="Address_Information-tab">
+                                                        <div class="meta-body">
+ <div class="card"> 
+                    <div class="card-header d-block d-md-flex justify-content-between">
+                      <h5>Edit Store {{$store->store_business_name}}</h5>
+                      <div class="d-flex flex-wrap gap-2 mt-3 mt-md-0">
+                   
+                        <a class="btn btn-success" href="{{ route('stores.index') }}">
+                            View Store
+                        </a>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="row g-xl-5 g-3">
+                        <div class="col-sm-12">
+                        <form action="{{ route('stores.update',$store->id) }}" method="POST">
+        @csrf
+        @method('PUT')
+       
+
+<div class="row">
+
+       
+            <div class="col-lg-4 ">
+                 <label for="country_id">Country</label>
+                <select name="country_id" id="country_id" class="form-control select2 @error('country_id') is-invalid @enderror"   >
+                    <option value="">Select Country</option>
+                    @foreach($countries as $country)
+                        <option value="{{ $country->id }}" {{ $store->country_id == $country->id ? 'selected' : '' }}>
+                            {{ $country->country_name }}
+                        </option>
+                    @endforeach
+                </select>
+                @error('country_id')
+                     <div class="invalid-feedback">{{ $message }}</div> 
+                @enderror
+            </div>
+             <div class="col-lg-4 ">
+                <label for="stateid">State<span class="text-danger">*</span></label>
+                <select name="stateid" id="stateid" class="form-control @error('stateid') is-invalid @enderror">
+                    <option value="">Select State</option>
+                    @foreach ($states as $state)
+                        <option value="{{ $state->id }}" {{ $state->id == old('stateid', $store->stateid) ? 'selected' : '' }}>
+                            {{ $state->name }}
+                        </option>
+                    @endforeach
+                </select>
+                @error('stateid')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+
+         
+            <div class="col-lg-4 ">
+                <label for="cityid">City<span class="text-danger">*</span></label>
+            <select name="cityid" id="cityid" class="form-control @error('cityid') is-invalid @enderror">
+                    <option value="">Select City</option>
+                    @foreach ($cities as $city)
+                        <option value="{{ $city->id }}" {{ $city->id == old('cityid', $store->cityid) ? 'selected' : '' }}>
+                            {{ $city->name }}
+                        </option>
+                    @endforeach
+                </select>
+                @error('cityid')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+
+
+             
+        <div class="col-lg-4">
+                <div class="form-group">
+                    <label for="zip_code">Zip Code</label>
+                    <input type="text" name="zip_code" class="form-control @error('zip_code') is-invalid @enderror" placeholder="Enter Zip Code" value="{{ old('zip_code',$store->zip_code) }}">
+                    @error('zip_code')
+                        <span class="invalid-feedback">{{ $message }}</span>
+                    @enderror
+                </div>
+            </div>
+    <div class="col-lg-4">
+                <div class="form-group">
+                    <label for="proposed_nnn">Map Location Link</label>
+                    <input type="text" name="map_location_link" class="form-control @error('map_location_link') is-invalid @enderror" placeholder="Enter Map Location Link" value="{{ $store->map_location_link }}">
+                 
+                    @error('map_location_link')
+                        <span class="invalid-feedback">{{ $message }}</span>
+                    @enderror
+                </div>
+            </div>
+
+</div>
+        
+        <div class="form-group mt-4">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+
+                                                
+                                                
+                                                             <div class="tab-pane fade" id="Social_Media_Information" role="tabpanel" aria-labelledby="Social_Media_Information-tab">
+                                                        <div class="meta-body">
+     <div class="card"> 
+                    <div class="card-header d-block d-md-flex justify-content-between">
+                      <h4>Store {{$store->store_business_name}}</h4>
+                      <div class="d-flex flex-wrap gap-2 mt-3 mt-md-0">
+                   
+                        <a class="btn btn-success" href="{{route('franchises.create')}}">
+Add Franchise
+                        </a>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="row g-xl-5 g-3">
+                        <div class="col-sm-12">
+                                           <form action="#" method="POST">
+    @csrf
+    @method('PUT')
+    <div class="row">
+        <!-- Facebook Link -->
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="facebook_link">Facebook Link</label>
+                <input type="url" class="form-control @error('facebook_link') is-invalid @enderror" id="facebook_link" name="facebook_link" 
+                    placeholder="Enter Facebook link" value="{{ old('facebook_link') }}">
+                @error('facebook_link')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+        </div>
+
+        <!-- Tiktok Link -->
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="tiktok_link">Tiktok Link</label>
+                <input type="url" class="form-control @error('tiktok_link') is-invalid @enderror" id="tiktok_link" name="tiktok_link" 
+                    placeholder="Enter Tiktok link" value="{{ old('tiktok_link') }}">
+                @error('tiktok_link')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+        </div>
+
+        <!-- Instagram Link -->
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="insta_link">Instagram Link</label>
+                <input type="url" class="form-control @error('insta_link') is-invalid @enderror" id="insta_link" name="insta_link" 
+                    placeholder="Enter Instagram link" value="{{ old('insta_link') }}">
+                @error('insta_link')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+        </div>
+  
+        <!-- Instagram Username -->
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="insta_username">Instagram Username</label>
+                <input type="text" class="form-control @error('insta_username') is-invalid @enderror" id="insta_username" name="insta_username" 
+                    placeholder="Enter Instagram username" value="{{ old('insta_username') }}">
+                @error('insta_username')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+        </div>
+
+        <!-- Instagram Password -->
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="insta_password">Instagram Password</label>
+                <input type="password" class="form-control @error('insta_password') is-invalid @enderror" id="insta_password" name="insta_password" 
+                    placeholder="Enter Instagram password">
+                @error('insta_password')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+        </div>
+
+        <!-- Tiktok Username -->
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="tiktok_username">Tiktok Username</label>
+                <input type="text" class="form-control @error('tiktok_username') is-invalid @enderror" id="tiktok_username" name="tiktok_username" 
+                    placeholder="Enter Tiktok username" value="{{ old('tiktok_username') }}">
+                @error('tiktok_username')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+        </div>
+ 
+        <!-- Tiktok Password -->
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="tiktok_password">Tiktok Password</label>
+                <input type="password" class="form-control @error('tiktok_password') is-invalid @enderror" id="tiktok_password" name="tiktok_password" 
+                    placeholder="Enter Tiktok password">
+                @error('tiktok_password')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+                               
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+                                                            
+                                                    
+                                                    <div class="tab-pane fade" id="Unemployment_Insurance_employer_regitration" role="tabpanel" aria-labelledby="Unemployment_Insurance_employer_regitration-tab">
+                                                        <div class="meta-body">
+                                                          
+ <div class="card"> 
+                    <div class="card-header d-block d-md-flex justify-content-between">
+                      <h5>Edit Store {{$store->store_business_name}}</h5>
+                      <div class="d-flex flex-wrap gap-2 mt-3 mt-md-0">
+                   
+                        <a class="btn btn-success" href="{{ route('stores.index') }}">
+                            View Store
+                        </a>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="row g-xl-5 g-3">
+                        <div class="col-sm-12">
+                          <form method="POST" action="">
+            @csrf <!-- Laravel Blade directive for CSRF protection -->
+            
+            <div class="row g-3">
+                <!-- Username -->
+                <div class="col-md-4">
+                    <div class="form-floating">
+                        <input type="text" class="form-control @error('username') is-invalid @enderror" id="username" name="username" placeholder="Username" value="{{ old('username') }}">
+                        <label for="username">Username</label>
+                        @error('username')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+                
+                <!-- Password -->
+                <div class="col-md-4">
+                    <div class="form-floating">
+                        <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password" placeholder="Password">
+                        <label for="password">Password</label>
+                        @error('password')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+                
+                <!-- Employer ID -->
+                <div class="col-md-4">
+                    <div class="form-floating">
+                        <input type="text" class="form-control @error('employer_id') is-invalid @enderror" id="employer_id" name="employer_id" placeholder="Employer ID" value="{{ old('employer_id') }}">
+                        <label for="employer_id">Employer ID</label>
+                        @error('employer_id')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row g-3 mt-3">
+                <!-- Portal Link -->
+                <div class="col-md-4">
+                    <div class="form-floating">
+                        <input type="url" class="form-control @error('portal_link') is-invalid @enderror" id="portal_link" name="portal_link" placeholder="Portal Link" value="{{ old('portal_link') }}">
+                        <label for="portal_link">Portal Link</label>
+                        @error('portal_link')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+                
+                <!-- Submit Button -->
+                <div class="col-md-4">
+                    <button type="submit" class="btn btn-primary mt-4">Submit</button>
+                </div>
+            </div>
+        </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+
+                                                    <div class="tab-pane fade" id="Employer_Identification_Number" role="tabpanel" aria-labelledby="Employer_Identification_Number-tab">
+                                                        <div class="meta-body">
+                                                       Employer Idetnifcatiom NUmber
+                                                        </div>
+                                                    </div>
+                                                    <div class="tab-pane fade" id="Oders_link" role="tabpanel" aria-labelledby="Oders_link-tab">
+                                                        <div class="meta-body">
+                                                         order links
                                                         </div>
                                                     </div>
                                                     <div class="tab-pane fade" id="banking" role="tabpanel" aria-labelledby="banking-tab">
@@ -444,17 +1058,100 @@
                                                             </div>
                                                         </div>
                                                     </div>
-
-
-
-
-                                                    
-
-
-
-
-
-
+                                                    <div class="tab-pane fade active show" id="all-attachments-documents" role="tabpanel" aria-labelledby="all-attachments-documents-tab">
+                                                        <div class="meta-body">
+                                                            <div class="list-product">
+                                                            <div class="datatable-wrapper datatable-loading no-footer sortable searchable fixed-columns">
+                                                                <div class="datatable-container">
+                                                                    <table class="table datatable-table">
+                                                                    <thead> 
+                                                                        <tr> 
+                                                                        <th>
+                                                                            <div class="form-check"> 
+                                                                            <input class="form-check-input checkbox-primary" type="checkbox">
+                                                                            </div>
+                                                                        </th>
+                                                                        <th> <span class="f-light f-w-600">Title</span></th>
+                                                                        <th> <span class="f-light f-w-600">Date</span></th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody> 
+                                                                        <tr class="product-removes">
+                                                                            <td>
+                                                                                <div class="form-check"> 
+                                                                                <input class="form-check-input checkbox-primary" type="checkbox">
+                                                                                </div>
+                                                                            </td>
+                                                                            <td> 
+                                                                                <div class="product-names">
+                                                                                    <p class="f-light">
+                                                                                        <strong>
+                                                                                            Document 1
+                                                                                        </strong>
+                                                                                    </p>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td> 
+                                                                                <div class="product-names">
+                                                                                    <p class="f-light">
+                                                                                        06-10-2024
+                                                                                    </p>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="product-removes">
+                                                                            <td>
+                                                                                <div class="form-check"> 
+                                                                                <input class="form-check-input checkbox-primary" type="checkbox">
+                                                                                </div>
+                                                                            </td>
+                                                                            <td> 
+                                                                                <div class="product-names">
+                                                                                    <p class="f-light">
+                                                                                        <strong>
+                                                                                            Document 1
+                                                                                        </strong>
+                                                                                    </p>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td> 
+                                                                                <div class="product-names">
+                                                                                    <p class="f-light">
+                                                                                        06-10-2024
+                                                                                    </p>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="product-removes">
+                                                                            <td>
+                                                                                <div class="form-check"> 
+                                                                                <input class="form-check-input checkbox-primary" type="checkbox">
+                                                                                </div>
+                                                                            </td>
+                                                                            <td> 
+                                                                                <div class="product-names">
+                                                                                    <p class="f-light">
+                                                                                        <strong>
+                                                                                            Document 1
+                                                                                        </strong>
+                                                                                    </p>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td> 
+                                                                                <div class="product-names">
+                                                                                    <p class="f-light">
+                                                                                        06-10-2024
+                                                                                    </p>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                    </table>
+                                                                </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <!-- <div class="col-xxl-3 col-xl-4 box-col-4e sidebar-left-wrapper">
@@ -1059,5 +1756,4 @@
 
         <!-- Container-fluid Ends-->
         </div>
-
           @endsection

@@ -13,56 +13,45 @@
                     <div class="card-body">
                       <div class="row g-xl-5 g-3">
                         <div class="col-sm-12">
-                          <form method="POST" action="">
+                        <form method="POST" action="/submit-ein-form">
             @csrf <!-- Laravel Blade directive for CSRF protection -->
-            
+
             <div class="row g-3">
-                <!-- Username -->
+                <!-- Employer Identification Number (EIN) -->
                 <div class="col-md-4">
                     <div class="form-floating">
-                        <input type="text" class="form-control @error('username') is-invalid @enderror" id="username" name="username" placeholder="Username" value="{{ old('username') }}">
-                        <label for="username">Username</label>
-                        @error('username')
+                        <input type="text" class="form-control @error('ein_number') is-invalid @enderror" id="ein_number" name="ein_number" placeholder="Employer Identification Number (EIN)" value="{{ old('ein_number') }}">
+                        <label for="ein_number">Employer Identification Number (EIN)</label>
+                        @error('ein_number')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
                 </div>
-                
-                <!-- Password -->
+
+                <!-- Pin Code (EIN) -->
                 <div class="col-md-4">
                     <div class="form-floating">
-                        <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password" placeholder="Password">
-                        <label for="password">Password</label>
-                        @error('password')
+                        <input type="text" class="form-control @error('ein_pin') is-invalid @enderror" id="ein_pin" name="ein_pin" placeholder="Pin Code (EIN)" value="{{ old('ein_pin') }}">
+                        <label for="ein_pin">Pin Code (EIN)</label>
+                        @error('ein_pin')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
                 </div>
-                
-                <!-- Employer ID -->
+
+                <!-- Address with IRS (EIN) -->
                 <div class="col-md-4">
                     <div class="form-floating">
-                        <input type="text" class="form-control @error('employer_id') is-invalid @enderror" id="employer_id" name="employer_id" placeholder="Employer ID" value="{{ old('employer_id') }}">
-                        <label for="employer_id">Employer ID</label>
-                        @error('employer_id')
+                        <input type="text" class="form-control @error('ein_address') is-invalid @enderror" id="ein_address" name="ein_address" placeholder="Address with IRS (EIN)" value="{{ old('ein_address') }}">
+                        <label for="ein_address">Address with IRS (EIN)</label>
+                        @error('ein_address')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
                 </div>
             </div>
-            
+
             <div class="row g-3 mt-3">
-                <!-- Portal Link -->
-                <div class="col-md-4">
-                    <div class="form-floating">
-                        <input type="url" class="form-control @error('portal_link') is-invalid @enderror" id="portal_link" name="portal_link" placeholder="Portal Link" value="{{ old('portal_link') }}">
-                        <label for="portal_link">Portal Link</label>
-                        @error('portal_link')
-                            <div class="invalid-feedback">{{ $message }}</div>
-                        @enderror
-                    </div>
-                </div>
-                
                 <!-- Submit Button -->
                 <div class="col-md-4">
                     <button type="submit" class="btn btn-primary mt-4">Submit</button>

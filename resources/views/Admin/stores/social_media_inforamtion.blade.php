@@ -1,4 +1,4 @@
-        <div class="tab-pane fade" id="Social_Media_Information" role="tabpanel" aria-labelledby="Social_Media_Information-tab">
+      
                                                         <div class="meta-body">
      <div class="card"> 
                     <div class="card-header d-block d-md-flex justify-content-between">
@@ -111,4 +111,3 @@ Add Franchise
                     </div>
                   </div>
               </div>
-          </div>

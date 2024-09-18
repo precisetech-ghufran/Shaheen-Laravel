@@ -13,7 +13,7 @@
                     <div class="card-body">
                       <div class="row g-xl-5 g-3">
                         <div class="col-sm-12">
-                          <form method="POST" action="">
+                         <form method="POST" action="">
             @csrf <!-- Laravel Blade directive for CSRF protection -->
             
             <div class="row g-3">
@@ -53,7 +53,7 @@
             
             <div class="row g-3 mt-3">
                 <!-- Portal Link -->
-                <div class="col-md-4">
+                <div class="col-md-4 col-lg-12">
                     <div class="form-floating">
                         <input type="url" class="form-control @error('portal_link') is-invalid @enderror" id="portal_link" name="portal_link" placeholder="Portal Link" value="{{ old('portal_link') }}">
                         <label for="portal_link">Portal Link</label>
