@@ -101,6 +101,18 @@ $franchise = Franchise::all();
         return view('admin.stores.edit', compact('store','states','countries','franchise','cities'));
     }
 
+
+      public function show($id)
+    {
+
+        $franchise = Franchise::all();
+           $countries = Country::all();
+        $states = State::all();
+        $store = Store::findOrFail($id);
+          $cities = City::where('state_id', $store->stateid)->get();
+        return view('admin.stores.show', compact('store','states','countries','franchise','cities'));
+    }
+
     // Update the specified store in the database
     public function update(Request $request, $id)
     {

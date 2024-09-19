@@ -42,7 +42,7 @@ View States
                         <div class="col-sm-12">
                             <form id="advance-tab" action="{{route('states.update',$state->id)}}" method="post" >
                               @csrf
-                           @method('PUT') <!-- Or @method('PATCH') -->
+                           @method('PUT') 
                                 <div class="row g-3 custom-input">
                                     
                                   

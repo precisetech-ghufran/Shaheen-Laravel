@@ -27,12 +27,12 @@
                     <div class="card"> 
                       <div class="card-body">
                         <div class="card-header d-flex justify-content-between align-items-center">
-                          <h4>  <a class="btn btn-primary" href="{{route('stores.create')}}">
+                          <h4> 
+
+                           <a class="btn btn-primary " href="{{route('stores.create')}}" style="margin-right: auto;">
                             Add Store
                         </a></h4>
-                         <a class="btn btn-success" href="{{route('Store_staus_update.index')}}">
-                                    Update Store Status
-                                </a>
+                    
                         </div>
                         <div class="list-product">
                           <div class="datatable-wrapper datatable-loading no-footer sortable searchable fixed-columns">
@@ -65,13 +65,13 @@
 
              <td> 
           <div class="product-names">
-                                        <a  href="{{route('stores.edit',$store->id)}}" class="f-light">{{$store->date}}</a>
+                                        <a  href="{{route('stores.show',$store->id)}}" class="f-light">{{$store->date}}</a>
                                       </div>
                                     </td>
 
                                        <td> 
           <div class="product-names">
-                                        <a  href="{{route('stores.edit',$store->id)}}" class="f-light">
+                                        <a  href="{{route('stores.show',$store->id)}}" class="f-light">
 
    <img src="{{ asset('uploads/franchise/' . $store->Franchise->franchise_image) }}" alt="Franchise Image" class="img-thumbnail mt-2" width="50">
 
@@ -80,25 +80,25 @@
                                     </td>
                                        <td> 
           <div class="product-names">
-                                        <a  href="{{route('stores.edit',$store->id)}}" class="f-light">{{$store->store_business_name}}</a>
+                                        <a  href="{{route('stores.show',$store->id)}}" class="f-light">{{$store->store_business_name}}</a>
                                       </div>
                                     </td>
                                        <td> 
           <div class="product-names">
-                                        <a  href="{{route('stores.edit',$store->id)}}" class="f-light">
+                                        <a  href="{{route('stores.show',$store->id)}}" class="f-light">
                                           {{$store->Franchise->franchise_name }}</a>
                                       </div>
                                     </td>
 
                                        <td> 
           <div class="product-names">
-                                        <a  href="{{route('stores.edit',$store->id)}}" class="f-light">{{$store->site_address}}</a>
+                                        <a  href="{{route('stores.show',$store->id)}}" class="f-light">{{$store->site_address}}</a>
                                       </div>
                                     </td>
 
                                                                   <td> 
           <div class="product-names">
-                                        <a  href="{{route('stores.edit',$store->id)}}" class="f-light">{{$store->status->store_status}}</a>
+                                        <a  href="{{route('stores.show',$store->id)}}" class="f-light">{{$store->status->store_status}}</a>
                                       </div>
                                     </td>
 

@@ -5,9 +5,9 @@
                       <h5>Edit Store {{$store->store_business_name}}</h5>
                       <div class="d-flex flex-wrap gap-2 mt-3 mt-md-0">
                    
-                        <a class="btn btn-success" href="{{ route('stores.index') }}">
+                    <!--     <a class="btn btn-success" href="{{ route('stores.index') }}">
                             View Store
-                        </a>
+                        </a> -->
                       </div>
                     </div>
                     <div class="card-body">

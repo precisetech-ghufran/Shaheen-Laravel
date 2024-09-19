@@ -70,7 +70,7 @@
                     <span>Stores</span>
                    </a>
                   <ul class="sidebar-submenu">
-                    <li> <a href="#">Stores</a></li>
+                    <li> <a href="{{route('stores.index')}}">Stores</a></li>
                      <li> <a href="#">Store Partners</a></li>
                       <li> <a href="#">Store GM</a></li>
                        <li> <a href="#">Store Pnl</a></li>
@@ -121,7 +121,7 @@
                     <span>Proposed</span>
                    </a>
                   <ul class="sidebar-submenu">
-                    <li> <a href="{{route('stores.index')}}">Proposed Site</a></li>
+                    <li> <a href="#">Proposed Site</a></li>
                           <li> <a href="#">Lease Process</a></li>
                                 <li> <a href="#">Pre Construction</a></li>
                                       <li> <a href="#">Construction</a></li>
